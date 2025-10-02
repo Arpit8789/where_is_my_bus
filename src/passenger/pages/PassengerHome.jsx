@@ -68,7 +68,7 @@ const PassengerHome = () => {
                   Track Bus Now
                 </Button>
               </Link>
-              <Link to={ROUTES.REGISTER}>
+              <Link to="/login">
                 <Button size="lg" variant="outline" className="bg-white text-primary-600 hover:bg-gray-100">
                   Get Started
                 </Button>
