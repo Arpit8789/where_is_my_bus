@@ -12,18 +12,20 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
+    minify: 'esbuild',
+    target: 'esnext',
     rollupOptions: {
+      external: [],
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['framer-motion', 'lucide-react'],
-          'map-vendor': ['leaflet', 'react-leaflet'],
-        },
+        manualChunks: undefined,
       },
     },
   },
   server: {
     port: 5173,
     host: true,
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom'],
   },
 })
